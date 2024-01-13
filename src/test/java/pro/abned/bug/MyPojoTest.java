@@ -16,6 +16,7 @@ public class MyPojoTest {
         Jackson2ObjectMapperBuilder builder = new Jackson2ObjectMapperBuilder();
         builder.defaultViewInclusion(true);
         objectMapper = builder.build();
+        objectMapper.setConfig(objectMapper.getSerializationConfig().withView(JsonViews.Default.class));
     }
 
     @Test
